@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.img-wrapper {
+  display: inline-block;
+  height: 100px;
+
+  opacity: 0;
+  animation-name: fadeInLogo;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
+  animation-delay: 1s;
+  > img {
+    height: 100%;
+  }
+}
+
+@keyframes fadeInLogo {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.img-wrapper:nth-child(1) {
+  transform: translateX(-10px);
+}
+
+.img-wrapper:nth-child(2) {
+  transform: translateX(-103px);
+}
+
+.img-wrapper:nth-child(3) {
+  transform: translateX(-218px);
+}
+
+.img-wrapper:nth-child(4) {
+  transform: translateX(-305px);
+}
+.img-wrapper:nth-child(5) {
+  transform: translateX(-371px);
+}
+.img-wrapper:nth-child(6) {
+  transform: translateX(-481px);
+}
+
+.img-wrapper:nth-child(7) {
+  transform: translateX(-507px);
+}
