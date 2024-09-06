@@ -18,22 +18,44 @@ body {
 .bar {
   position: absolute;
   height: 120vh;
-  width: 30px;
+  width: 50px;
   background-color: #fff;
   transform: rotate(20deg) translateY(100%);
 }
 
 .bar--first {
+  animation: moveBar 0.5s cubic-bezier(0, 0, 0, 1) 0.5s forwards,
+    moveTop 0.3s cubic-bezier(0, 0, 0, 1) 0.5s forwards;
   background-color: red;
   left: 20px;
 }
 .bar--second {
+  animation: moveBar 0.7s cubic-bezier(0, 0, 0, 1) 0.6s forwards,
+    moveTop 0.3s cubic-bezier(0, 0, 0, 1) 0.5s forwards;
   background-color: blue;
-  left: 70px;
+  left: 95px;
 }
 .bar--third {
+  animation: moveBar 1s cubic-bezier(0, 0, 0, 1) 0.8s forwards,
+    moveTop 0.s cubic-bezier(0, 0, 0, 1) 0.5s forwards;
   background-color: yellow;
-  left: 120px;
+  left: 170px;
+}
+
+@keyframes moveBar {
+  100% {
+    transform: rotate(20deg) translateY(-5%);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    top: 50%;
+  }
+
+  100% {
+    top: 0;
+  }
 }
 
 .logo {
