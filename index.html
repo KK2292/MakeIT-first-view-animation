@@ -8,33 +8,62 @@
   </head>
   <body>
     <div class="first-view">
+      <div id="particles-js"></div>
+
       <div class="bar bar--first"></div>
       <div class="bar bar--second"></div>
       <div class="bar bar--third"></div>
-      <!-- <div class="logo">
-      <div class="img-wrapper">
-        <img src="img/logo.png" alt="ロゴ" />
+      <div class="first-view-contents">
+        <div class="logo">
+          <div class="img-wrapper">
+            <img src="img/logo.png" alt="ロゴ" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/M.png" alt="M" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/a.png" alt="a" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/k.png" alt="k" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/e.png" alt="e" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/I.png" alt="I" />
+          </div>
+          <div class="img-wrapper">
+            <img src="img/T.png" alt="T" />
+          </div>
+          <p class="sub-title typing">If we can try, we can MakeIT excitnig.</p>
+        </div>
       </div>
-      <div class="img-wrapper">
-        <img src="img/M.png" alt="M" />
-      </div>
-      <div class="img-wrapper">
-        <img src="img/a.png" alt="a" />
-      </div>
-      <div class="img-wrapper">
-        <img src="img/k.png" alt="k" />
-      </div>
-      <div class="img-wrapper">
-        <img src="img/e.png" alt="e" />
-      </div>
-      <div class="img-wrapper">
-        <img src="img/I.png" alt="I" />
-      </div>
-      <div class="img-wrapper">
-        <img src="img/T.png" alt="T" />
-      </div>
-    </div> -->
     </div>
-    <script src="index.js"></script>
+
+    <script src="js/particle/particles.js"></script>
+    <script src="js/particle/app.js"></script>
+    <script>
+      const typeTarget = document.querySelectorAll(".sub-title");
+
+      typeTarget.forEach((element) => {
+        let typeContent = element.textContent;
+        let typeSprit = typeContent.split("");
+        element.textContent = "";
+        element.classList.add("typing-active");
+        let typeLength = 0;
+
+        setTimeout(() => {
+          const typeInterval = setInterval(() => {
+            if (typeLength < typeSprit.length) {
+              element.textContent += typeSprit[typeLength];
+              typeLength++;
+            } else {
+              clearInterval(typeInterval);
+            }
+          }, 100);
+        }, 3200);
+      });
+    </script>
   </body>
 </html>
