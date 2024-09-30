@@ -58,13 +58,14 @@ body {
 
 .first-view-contents {
   padding: 10vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
   border-radius: 5%;
+  transition: 0.5s;
 }
 
 .logo {

@@ -43,6 +43,13 @@
     <script src="js/particle/particles.js"></script>
     <script src="js/particle/app.js"></script>
     <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.querySelector(".first-view-contents").style.backgroundColor =
+            "rgba(0, 0, 0, 0.5)";
+        }, 2500);
+      });
+
       const typeTarget = document.querySelectorAll(".sub-title");
 
       typeTarget.forEach((element) => {
