@@ -66,6 +66,7 @@ body {
   margin: auto;
   border-radius: 5%;
   transition: 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .logo {
