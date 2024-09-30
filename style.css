@@ -33,19 +33,19 @@ body {
 
 .bar--first {
   animation: moveBar 0.2s cubic-bezier(0, 0, 0, 1) 1s forwards;
-  border: 0.4vmax solid red;
-  background-color: rgb(255, 0, 0, 0.1);
+  border: 0.4vmax solid #e60013;
+  background-color: rgb(2230, 0, 19, 0.1);
 }
 .bar--second {
   animation: moveBar 0.2s cubic-bezier(0, 0, 0, 1) 1.2s forwards;
-  border: 0.4vmax solid blue;
-  background-color: rgb(0, 0, 255, 0.1);
+  border: 0.4vmax solid #303967;
+  background-color: rgb(48, 57, 103, 0.1);
   left: 8vmax;
 }
 .bar--third {
   animation: moveBar 0.6s cubic-bezier(0, 0, 0, 1) 1.4s forwards;
-  border: 0.4vmax solid yellow;
-  background-color: rgba(255, 255, 0, 0.1);
+  border: 0.4vmax solid #ffe201;
+  background-color: rgba(255, 226, 1, 0.1);
   left: 16vmax;
 }
 
@@ -126,12 +126,28 @@ body {
   color: #fff;
   font-size: 3.5vw;
   top: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  &::after {
+    content: "|";
+    color: #bbb;
+    height: 2px;
+    opacity: 0;
+    animation-name: cursor;
+    animation-delay: 3.2s;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, end);
+  }
 }
 
-.typeing {
-  opacity: 0;
-}
-
-.typing-active {
-  opacity: 1;
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

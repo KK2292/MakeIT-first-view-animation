@@ -9,7 +9,6 @@
   <body>
     <div class="first-view">
       <div id="particles-js"></div>
-
       <div class="bar bar--first"></div>
       <div class="bar bar--second"></div>
       <div class="bar bar--third"></div>
@@ -36,7 +35,7 @@
           <div class="img-wrapper">
             <img src="img/T.png" alt="T" />
           </div>
-          <p class="sub-title typing">If we can try, we can MakeIT excitnig.</p>
+          <p class="sub-title">If we can try, we can MakeIT exciting.</p>
         </div>
       </div>
     </div>
@@ -50,19 +49,29 @@
         let typeContent = element.textContent;
         let typeSprit = typeContent.split("");
         element.textContent = "";
-        element.classList.add("typing-active");
         let typeLength = 0;
 
-        setTimeout(() => {
+        const typeFunction = () => {
           const typeInterval = setInterval(() => {
             if (typeLength < typeSprit.length) {
-              element.textContent += typeSprit[typeLength];
-              typeLength++;
+              if (typeSprit[typeLength - 1] === ",") {
+                clearInterval(typeInterval);
+                setTimeout(() => {
+                  element.textContent += typeSprit[typeLength];
+                  typeLength++;
+                  typeFunction();
+                }, 500);
+              } else {
+                element.textContent += typeSprit[typeLength];
+                typeLength++;
+              }
             } else {
               clearInterval(typeInterval);
             }
-          }, 100);
-        }, 3200);
+          }, 70);
+        };
+
+        setTimeout(typeFunction, 3200);
       });
     </script>
   </body>

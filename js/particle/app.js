@@ -15,6 +15,8 @@ particlesJS(
   "particles-js",
 
   {
+    //particles.jsのサイトでデザインいじってコピペすれば簡単に変えられます
+
     particles: {
       number: {
         value: 80,
